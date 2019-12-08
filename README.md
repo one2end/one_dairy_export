@@ -3,20 +3,29 @@
 一本日记导出工具
 菜鸡试手作品，计划功能只有两个。
 
-* 将一本日记txt文本，json文件拆分为按日期的txt文本。
+* 将一本日记json文件拆分为按日期的txt文本。
 * 将日记导入印象笔记并且调整其中的标题日期。
+
+## 直接运行
+
+* 将dairy.json 、enex 和dairy.py 放在同一文件夹下。
+* shift右键，运行powershell或者cmd。
+* 输入`python dairy.py`回车。
+* 输入文件序列，数字。对于是否需要文件夹分类输入True和False
+* 运行原理往下看
 
 ## 日记拆分
 
-从一本日记手机端，设置，导出txt或者备份数据。或者从坚果云直接下载json文件。
+从一本日记从坚果云直接下载json文件。
 
 代码示例：
 
 ```python
-import one_dairy_export as ode
+import dairy
 
 addr = 'json、txt文件绝对地址'
-ode.split(addr,dir=True)
+dairy.split_json(addr,dir=True)
+
 # 将该文件进行拆分，dir是带有按照年月的文件夹参数，如果是False，则所有日记输出在一个文件夹内。
 ```
 
@@ -32,11 +41,12 @@ ode.split(addr,dir=True)
 代码示例：
 
 ```python
-import one_dairy_export as ode
+import dairy
 addr = 'enex文件绝对地址'
-ode.enex(addr)
+dairy.change_enex(addr)
 
 ```
+
 
 ## 有图片的日记
 
